@@ -1,6 +1,6 @@
 //tslnit는 typescript linter를 설정하기 위한 파일 
 //linter은 가장 좋은 typescirpt 코드를 알려주는 기능을 함
-//tsconfing는 typescript를 설정하기위한 파일 
+//tsconfig는 typescript를 설정하기위한 파일 
 
 {
     "extends":["tslint:recommended", "tslint-config-prettier"],

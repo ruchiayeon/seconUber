@@ -4,7 +4,9 @@
   "description": "seconUber project please no error! ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cd src && nodemon --exec ts-node index.ts -e ts,graphql",
+    "pretypes":"gql-merge --out-file ./src/schema.graphql ./src/api/**/*.graphql",
+    "types": "graphql-to-typescript ./src/schema.graphql ./src/types/graphql.d.ts"
   },
   "repository": {
     "type": "git",
@@ -17,10 +19,23 @@
   },
   "homepage": "https://github.com/ruchiayeon/seconUber#readme",
   "devDependencies": {
+    "@types/cors": "^2.8.4",
+    "@types/helmet": "0.0.43",
+    "@types/morgan": "^1.7.35",
     "@types/node": "^11.13.5",
-    "nodemon": "^1.18.11",
+    "gql-merge": "0.0.6",
+    "graphql-to-typescript": "^0.1.2",
+    "nodemon": "^1.17.5",
     "ts-node": "^8.1.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.4.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "graphql-tools": "^4.0.4",
+    "graphql-yoga": "^1.17.4",
+    "helmet": "^3.16.0",
+    "merge-graphql-schemas": "^1.5.8",
+    "morgan": "^1.9.1"
   }
 }
