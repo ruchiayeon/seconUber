@@ -1,0 +1,19 @@
+{
+  "name": "seconuber",
+  "version": "1.0.0",
+  "description": "seconUber project please no error! ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruchiayeon/seconUber.git"
+  },
+  "author": "ruchiayeon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ruchiayeon/seconUber/issues"
+  },
+  "homepage": "https://github.com/ruchiayeon/seconUber#readme"
+}
