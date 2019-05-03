@@ -4,7 +4,7 @@ require("dotenv").config()
 
 const connectionOtions: ConnectionOptions = {
     type: "mysql",
-    database: "secondUber",
+    database: "second_uber",
     synchronize: true,
     logging: true,
     entities: ["entities/**/*.*"],
