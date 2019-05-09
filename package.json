@@ -4,6 +4,7 @@
   "description": "seconUber project please no error! ",
   "main": "index.js",
   "scripts": {
+    "predev":"npm run types",
     "dev": "cd src && nodemon --exec ts-node index.ts -e ts,graphql",
     "pretypes": "gql-merge --out-file ./src/schema.graphql ./src/api/**/*.graphql",
     "types": "graphql-to-typescript ./src/schema.graphql ./src/types/graphql.d.ts"
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/ruchiayeon/seconUber#readme",
   "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
     "@types/cors": "^2.8.4",
     "@types/helmet": "0.0.43",
     "@types/morgan": "^1.7.35",
@@ -31,6 +33,7 @@
     "typescript": "^3.4.4"
   },
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "class-validator": "^0.9.1",
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",

@@ -1,0 +1,13 @@
+type Verification{
+    id: Int!
+    target: String!
+    payload: String!
+    key:String!
+    used: Boolean! 
+    createAt: String!
+    updateAt: String!
+}
+
+
+##email이나 phonNumber을 verify할때 Verification 정보를 db에 생성하기 위해 만든 파일 (Query날리는 부분이라고 생각 하믄 된다링.)
+#payload를 통해서 verification을 생성한다. 
