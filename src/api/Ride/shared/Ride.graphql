@@ -1,0 +1,19 @@
+type Ride {
+    id: Int! 
+    status: String!
+    pickUpAddress: String!
+    pickUpLng:Float!
+    pickUpLat:Float!
+    dropOffAddress:String!
+    dropOffLng:Float!
+    dropOffLat:Float!
+    price: Float!
+    duration:String!
+    distance:String!
+    createAt: String!
+    updateAt: String
+
+}
+
+##status는 요청 취소 끝남과 같이 상태를 나타내는 것 
+##duration은 시간을 나타내는듯 (걸리는 시간 )

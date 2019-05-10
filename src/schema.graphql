@@ -1,5 +1,48 @@
+type Chat {
+  id: Int!
+  messages: [Message]!
+  participant: [User]!
+  createAt: String!
+  updateAt: String
+}
+
+type Message {
+  id: Int!
+  text: String!
+  chat: Chat!
+  user: User!
+  createAt: String!
+  updateAt: String
+}
+
+type Place {
+  id: Int!
+  name: String!
+  lastLng: Float!
+  lastLnt: Float!
+  adress: String!
+  favorite: Boolean!
+  createAt: String!
+  updateAt: String
+}
+
+type Ride {
+  id: Int!
+  status: String!
+  pickUpAddress: String!
+  pickUpLng: Float!
+  pickUpLat: Float!
+  dropOffAddress: String!
+  dropOffLng: Float!
+  dropOffLat: Float!
+  price: Float!
+  duration: String!
+  distance: String!
+  createAt: String!
+  updateAt: String
+}
+
 type User {
-  # # 사용자의 기본 스탯 정도 --> 기본 필수 정보라고 생각합시닷. 
   id: Int!
   email: String
   verifiedEmail: Boolean!
@@ -13,6 +56,8 @@ type User {
   profilePhoto: String
   createAt: String!
   updateAt: String
+  chat: Chat
+  messages: [Message]
   # #앱의 특성에 따라 가감이 있는부분 
   isRiding: Boolean!
   isDriving: Boolean!
@@ -33,5 +78,5 @@ type Verification {
   key: String!
   used: Boolean!
   createAt: String!
-  updateAt: String!
+  updateAt: String
 }

@@ -1,11 +1,14 @@
 import bcrypt from "bcrypt";
 import { IsEmail} from "class-validator";
-import { Entity, BaseEntity ,PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, BeforeInsert, BeforeUpdate} from "typeorm";
+import { Entity, BaseEntity ,PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, BeforeInsert, BeforeUpdate, ManyToOne, OneToMany} from "typeorm";
+import Chat from "./Chat";
+import Message from "./Message";
+
 
 const BCRYPT_ROUNDS =10;
 
 @Entity()
-class user extends BaseEntity{
+class User extends BaseEntity{
     
     @PrimaryGeneratedColumn()
     id: number;
@@ -41,6 +44,12 @@ class user extends BaseEntity{
 
     @Column({type:"text"})
     profilePhoto:string;
+
+    @ManyToOne(type => Chat, chat => chat.participant)
+    chat:Chat; //하나의 Chat에서는 여러명의 참가자가 있다.
+
+    @OneToMany(type => Message, message => message.user)
+    messages: Message[]; //하나의 유저는 다수의 메세지를 쓴다. 
 
     @Column({type: "boolean",default: false})
     isDriving: boolean;
@@ -81,4 +90,4 @@ class user extends BaseEntity{
 }
 
 
-export default user;
+export default User;

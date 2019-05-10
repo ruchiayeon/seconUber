@@ -1,0 +1,11 @@
+type Message {
+    id: Int!
+    text:String!
+    chat: Chat!
+    user: User!
+    createAt: String!
+    updateAt: String
+}
+
+#relationship에 대해서 생각을 반드시 해야한다. 
+##userNickname은 안필요한가? 아님 Id값으로 parsing하는게 가능한가?

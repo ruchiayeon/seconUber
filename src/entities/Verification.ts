@@ -10,7 +10,7 @@ class Verification extends BaseEntity{
     @PrimaryGeneratedColumn()
     id:number;
 
-    @Column({type:"text"})//enum이 뭔지 확인-->열거형이라고 함 
+    @Column({type:"enum",enum: [PHONE,EMAIL]})//enum이 뭔지 확인-->열거형이라고 함 
     target:verificationTarget;
 
     @Column({type:"text"})

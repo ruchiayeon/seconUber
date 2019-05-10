@@ -5,6 +5,6 @@ type Place {
     lastLnt: Float!
     adress: String! 
     favorite: Boolean!
-    createAt: String
+    createAt: String!
     updateAt: String
 }
