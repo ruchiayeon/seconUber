@@ -9,11 +9,16 @@ type User {
     password: String
     phoneNumber: String
     verifiedPhoneNumber: Boolean! ## 폰번호 확인 하는 부분 
+    facebokId: String
     profilePhoto: String
     createAt: String!
     updateAt: String
     chat: Chat
     messages: [Message]
+    rideCustomer:[Ride]
+    rideDirver:[Ride]
+    verifications: [Verification]
+    
 
     ##앱의 특성에 따라 가감이 있는부분 
     isRiding: Boolean!

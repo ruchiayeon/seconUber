@@ -1,5 +1,6 @@
-import { Column,BaseEntity,Entity,CreateDateColumn,UpdateDateColumn, PrimaryGeneratedColumn, BeforeInsert} from 'typeorm';
+import { Column,BaseEntity,Entity,CreateDateColumn,UpdateDateColumn, PrimaryGeneratedColumn, BeforeInsert, ManyToOne} from 'typeorm';
 import { verificationTarget } from '../../src/types/types';
+import User from './User';
 
 const PHONE ="PHONE";
 const EMAIL ="EMAIL";
@@ -9,6 +10,9 @@ class Verification extends BaseEntity{
 
     @PrimaryGeneratedColumn()
     id:number;
+
+    @ManyToOne(type => User,user=>user.verifications)
+    user: User;
 
     @Column({type:"enum",enum: [PHONE,EMAIL]})//enum이 뭔지 확인-->열거형이라고 함 
     target:verificationTarget;

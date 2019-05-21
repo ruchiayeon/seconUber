@@ -29,6 +29,8 @@ type Place {
 type Ride {
   id: Int!
   status: String!
+  customer: User!
+  driver: User!
   pickUpAddress: String!
   pickUpLng: Float!
   pickUpLat: Float!
@@ -42,6 +44,16 @@ type Ride {
   updateAt: String
 }
 
+type FacebookConnectResponse {
+  ok: Boolean!
+  error: String
+  token: String
+}
+
+type Mutation {
+  FacebookConnect(email: String, firstName: String!, lastName: String!, phoneNumber: String, profilePhoto: String, facebokId: String!): FacebookConnectResponse!
+}
+
 type User {
   id: Int!
   email: String
@@ -53,11 +65,15 @@ type User {
   password: String
   phoneNumber: String
   verifiedPhoneNumber: Boolean!
+  facebokId: String
   profilePhoto: String
   createAt: String!
   updateAt: String
   chat: Chat
   messages: [Message]
+  rideCustomer: [Ride]
+  rideDirver: [Ride]
+  verifications: [Verification]
   # #앱의 특성에 따라 가감이 있는부분 
   isRiding: Boolean!
   isDriving: Boolean!
@@ -73,6 +89,7 @@ type Query {
 
 type Verification {
   id: Int!
+  user: User!
   target: String!
   payload: String!
   key: String!
